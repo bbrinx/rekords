@@ -10,10 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171024170130) do
+ActiveRecord::Schema.define(version: 20171024171618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "Profiles_Records", id: false, force: :cascade do |t|
+    t.bigint "Profile_id", null: false
+    t.bigint "Record_id", null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
