@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
+
+  devise_for :profiles
   resources :records
   resources :categories
   resources :groups
