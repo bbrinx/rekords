@@ -5,6 +5,12 @@
 
 <h1>Categories</h1>
 
+<!-- <%= link_to ("").html_safe, homes_path %> -->
+
+<button type="button" name="button">
+  <%= link_to 'Add New Category', new_category_path %>
+</button>
+
 <table>
   <thead>
     <tr>
@@ -16,7 +22,7 @@
   <tbody>
     <% @categories.each do |category| %>
       <tr>
-        <td><%= category.name %></td>
+        <td class="cat"><%= category.name %></td>
         <td><%= link_to 'Show', category %></td>
         <td><%= link_to 'Edit', edit_category_path(category) %></td>
         <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -27,6 +33,5 @@
 
 <br>
 
-<%= link_to 'New Category', new_category_path %>
 
 <%= link_to 'Back to Home', homes_path %>
