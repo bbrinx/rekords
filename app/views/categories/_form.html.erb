@@ -10,13 +10,13 @@
       </ul>
     </div>
   <% end %>
-
+  <div class="actions">
+    <button><%= form.submit %></button>
+  </div>
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :category_name %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
 <% end %>

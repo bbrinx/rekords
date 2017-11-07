@@ -1,6 +1,12 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Records</h1>
+
+<button type="submit" name="commit">
+  <%= link_to 'New Record', new_record_path %>
+</button>
+
+
 <p>Aktuell aufgestellte Rekorde</p>
 <table>
   <thead>
@@ -28,6 +34,6 @@
 
 <br>
 
-<%= link_to 'New Record', new_record_path %>
-
-<%= link_to 'Back to Home', homes_path %>
+<button id="homeBtn" type="submit" name="commit">
+  <%= link_to 'Back to Home', homes_path %>
+</button>

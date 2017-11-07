@@ -18,8 +18,8 @@
 
 header {
   width: 100%;
-  height: 100px;
-  background: white;
+  height: 90px;
+  background: rgba(255,255,255,0.8);;
   text-align: center;
 }
 
@@ -38,7 +38,7 @@ header {
 
 #nav_wrap
 {
-	margin-top:15px;
+	margin-top:30px;
   float: right;
 }
 
@@ -120,10 +120,19 @@ body {
   font-size: 15px;
   background: #f2f5f8;
   font-weight: 300;
+  background-image: url("medal_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1500px;
+
 }
 
-h1 {
+h1, h2 {
   text-align: center;
+}
+
+.app-cont h1 {
+  margin-top: 20px;
 }
 
 .app-cont h1::before, .app-cont h1::after {
@@ -142,12 +151,15 @@ a {
 
 .app-cont-thin {
   max-width: 650px;
-  height: 100vh;
+  height: 85vh;
   margin: 0 auto;
-  background: #fff;
+  background: rgba(255,255,255,0.8);
   padding: 1em 0;
   border-radius: 3px;
   position: relative;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
 }
 
 table {
@@ -166,7 +178,18 @@ th {
   padding: 0 0 0 10px;
 }
 
+td {
+  visibility: hidden;
+}
 
+.cat {
+  visibility: visible;
+}
+
+tr:hover td{
+  visibility: visible;
+
+}
 
 tbody tr:nth-child(even) {
   background: grey;
@@ -180,26 +203,87 @@ tbody tr td {
 
 button {
   position: absolute;
+  color: black;
   right: 10px;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 7px 2px;
+}
+
+button a {
+  color: black;
+}
+.actions button {
+  border: none;
+}
+
+#homeBtn {
+  left: 10px;
 }
 
 
 
-td {
-  visibility: hidden;
+#notice {
+  position: absolute;
+  right: 0px;
+  background: green;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 0.5s forwards;
+  animation-delay: 1s;
 }
 
-.cat {
-  visibility: visible;
+@-webkit-keyframes slide {
+
+    99% { right:  -500px;}
+    100% {visibility: hidden;}
+}
+
+@keyframes slide {
+    99% { right:  -500px;}
+    100% { visibility: hidden;}
 }
 
 
+.new_profile {
+  background-color: white;
+  margin: 0 auto;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 1%;
+}
+
+.new_profile .field, .new_profile .actions{
+  margin: 10px 0 0 0;
+}
+
+.field label {
+  left: 5px;
+}
+
+#error_explanation {
+  width: 100%;
+}
+
+// bootstrap changes
+
+.row {
+  margin: 20px 15px 20px 15px;
+
+}
 
 footer {
  position: absolute;
  width: 100%;
  height: 60px;
- background-color: black;
- color: white;
+ background-color: grey;
+ color: black;
  text-align: center;
+}
+
+footer p {
+  margin: 20px;
 }

@@ -5,9 +5,7 @@
 
 <h1>Categories</h1>
 
-<!-- <%= link_to ("").html_safe, homes_path %> -->
-
-<button type="button" name="button">
+<button type="submit" name="commit">
   <%= link_to 'Add New Category', new_category_path %>
 </button>
 
@@ -15,7 +13,7 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th colspan="3"></th>
+      <!-- <th colspan="3"></th> -->
     </tr>
   </thead>
 
@@ -34,4 +32,6 @@
 <br>
 
 
-<%= link_to 'Back to Home', homes_path %>
+<button id="homeBtn" type="submit" name="commit">
+  <%= link_to 'Back to Home', homes_path %>
+</button>
