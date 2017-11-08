@@ -11,17 +11,38 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :username %>
-    <%= form.text_field :username, id: :group_username %>
+  <div class="tableFix">
+    <div class="row">
+      <div class="col-3">
+        <%= form.label :username %>
+
+      </div>
+      <div class="col">
+        <%= form.text_field :username, id: :group_username %>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-3">
+        <%= form.label :password %>
+
+      </div>
+      <div class="col">
+        <%= form.text_field :password, id: :group_password %>
+
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2">
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :password %>
-    <%= form.text_field :password, id: :group_password %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
 <% end %>

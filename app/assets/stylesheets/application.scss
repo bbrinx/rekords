@@ -35,6 +35,21 @@ header {
   display: inline;
 }
 
+ .spin:hover {
+  animation: zoom .5s forwards;
+ -webkit-animation: zoom .5s forwards;
+
+}
+
+@keyframes zoom {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaley(1.1);
+  }
+}
+
 // Navigation
 
 #nav_wrap
@@ -93,13 +108,14 @@ header {
 #nav_wrap ul ul li
 {
 	float:none;
-	width:200px
+	width:150px
 }
 
 #nav_wrap ul ul a
 {
 	line-height:120%;
-	padding:10px 15px
+	padding:6px 15px;
+  border-top: 1px solid black;
 }
 
 #nav_wrap ul ul ul
@@ -170,8 +186,6 @@ a {
 
 table {
 
-  margin: 0 auto;
-  margin-top: 50px;
   margin-bottom: 50px;
 }
 table thead {
@@ -227,6 +241,7 @@ button a {
 
 #homeBtn {
   left: 10px;
+  bottom: 20%;
 }
 
 
@@ -246,12 +261,14 @@ button a {
 @-webkit-keyframes slide {
 
     99% { right:  -800px;}
-    100% {visibility: hidden;}
+    50% { opacity: 0.5;   }
+    100% {opacity: 0;}
 }
 
 @keyframes slide {
     99% { right:  -800px;}
-    100% { visibility: hidden;}
+    50% { opacity: 0.5;   }
+    100% { opacity: 0;}
 }
 
 
@@ -272,6 +289,7 @@ button a {
   left: 5px;
 }
 
+
 #error_explanation {
   width: 100%;
 }
@@ -290,6 +308,58 @@ img {
 
 img:hover {
   opacity: 1;
+}
+
+// sidebar
+
+.verticalSidebar {
+  margin-top: 20vh;
+}
+
+.sidebar{
+  position: absolute;
+  top: 90px;
+  width: 5%;
+  min-height: 80vh;
+  background-color: grey;
+  opacity: 0.7;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.sidebarToggle {
+  display: none;
+  margin-top: 50px;
+}
+
+.sidebar .col h1 {
+  margin-bottom: 20px;
+}
+
+.sidebar:hover .sidebarToggle {
+  display: inline-block;
+}
+
+.sidebar:hover .verticalSidebar {
+  display: none;
+  cursor: pointer;
+}
+
+.sidebar:hover {
+  width: 20%;
+}
+
+#tableBg {
+  background-color: white;
+  padding: 20px;
+  border: solid 1px grey;
+}
+
+.tableFix {
+  background-color: white;
+  padding: 20px;
+  border: solid 1px grey;
+  margin: 15px;
 }
 
 footer {

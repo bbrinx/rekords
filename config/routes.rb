@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   resources :headers
   resources :footers
+  resources :sidebar
   resources :homes
 
   resources :records
