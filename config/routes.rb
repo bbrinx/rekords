@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
 
-  root :to => 'homes#index'
-  # root 'welcome#index'
+  root to: 'homes#index'
 
   devise_for :profiles
-
 
   resources :headers
   resources :footers
