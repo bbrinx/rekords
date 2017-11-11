@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-root :to => 'homes#index'
+  root 'homes#index'
   resources :headers
   resources :footers
   resources :homes
+
+  devise_for :profiles
+  
   resources :records
   resources :categories
   resources :groups
