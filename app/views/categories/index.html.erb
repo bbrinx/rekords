@@ -1,27 +1,51 @@
 <p id="notice"><%= notice %></p>
 
+
+
+
 <h1>Categories</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="row">
+  <p>Aktuelle Kategorien</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
 
-  <tbody>
-    <% @categories.each do |category| %>
+<div class="row" id="tableBg">
+
+
+<div class="col">
+  <table>
+    <thead>
       <tr>
-        <td><%= category.name %></td>
-        <td><%= link_to 'Show', category %></td>
-        <td><%= link_to 'Edit', edit_category_path(category) %></td>
-        <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <!-- <th colspan="3"></th> -->
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
+    <tbody>
+      <% @categories.each do |category| %>
+        <tr>
+          <td class="cat"><%= category.name %></td>
+          <td><%= link_to 'Show', category %></td>
+          <td><%= link_to 'Edit', edit_category_path(category) %></td>
+          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
-<%= link_to 'New Category', new_category_path %>
+<div class="col">
+  <button type="submit" name="commit">
+    <%= link_to 'Add New Category', new_category_path %>
+  </button>
+</div>
+
+
+
+</div>
+
+
+<button id="homeBtn" type="submit" name="commit">
+  <%= link_to 'Back to Home', homes_path %>
+</button>
