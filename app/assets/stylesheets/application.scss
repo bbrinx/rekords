@@ -14,3 +14,363 @@
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
+
+
+header {
+  width: 100%;
+  height: 90px;
+  background: rgba(255,255,255,0.8);;
+  text-align: center;
+  border-bottom: 1px solid black;
+}
+
+.logo {
+  margin: 20px;
+  position: absolute;
+  top:0px;
+  left: 0px;
+}
+
+.logo h1{
+  display: inline;
+}
+
+ .spin:hover {
+  animation: zoom .5s forwards;
+ -webkit-animation: zoom .5s forwards;
+
+}
+
+@keyframes zoom {
+  0% {
+    transform: scaleX(1);
+  }
+  100% {
+    transform: scaley(1.1);
+  }
+}
+
+// Navigation
+
+#nav_wrap
+{
+	margin-top:30px;
+  float: right;
+  background:  white;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+#nav_wrap ul
+{
+	list-style:none;
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+#nav_wrap ul a
+{
+	display:block;
+	color:#333;
+	text-decoration:none;
+	font-weight:700;
+	font-size:12px;
+	line-height:32px;
+	padding:0 15px;
+}
+
+#nav_wrap ul li
+{
+	position:relative;
+	float:left;
+	margin:0;
+	padding:0
+}
+
+
+#nav_wrap ul li:hover
+{
+	// background:#f6f6f6
+}
+
+#nav_wrap ul ul
+{
+	display:none;
+	position:absolute;
+	top:100%;
+	left:0;
+	background:#fff;
+	padding:0
+}
+
+#nav_wrap ul ul li
+{
+	float:none;
+	width:150px
+}
+
+#nav_wrap ul ul a
+{
+	line-height:120%;
+	padding:6px 15px;
+  border-top: 1px solid black;
+}
+
+#nav_wrap ul ul ul
+{
+	top:0;
+	left:100%
+}
+
+#nav_wrap ul li:hover > ul
+{
+	display:block
+}
+
+
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 15px;
+  background: #f2f5f8;
+  font-weight: 300;
+  background-image: url("medal_bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1500px;
+  background-position-x: 50%;
+
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.app-cont p {
+  text-align: justify
+
+}
+
+.app-cont h1 {
+  margin-top: 20px;
+}
+
+.app-cont h1::before, .app-cont h1::after {
+  content: "-";
+  padding: 0 3px 0 3px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.app-cont {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.app-cont-thin {
+  max-width: 650px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: rgba(255,255,255,0.8);
+  padding: 1em 0;
+  position: relative;
+  border: 1px solid black;
+  border-bottom: none;
+  border-top: none;
+}
+
+
+table {
+
+  margin-bottom: 50px;
+}
+table thead {
+  background: black;
+  opacity: 0.5;
+  color: white;
+}
+
+th {
+  padding: 0 0 0 10px;
+}
+
+td {
+  visibility: hidden;
+}
+
+.cat {
+  visibility: visible;
+}
+
+tr:hover td{
+  visibility: visible;
+
+}
+
+tbody tr:nth-child(even) {
+  background: grey;
+
+}
+
+tbody tr td {
+  padding: 0 0 0 10px;
+
+}
+
+button {
+  position: absolute;
+  color: black;
+  right: 10px;
+  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
+  border-radius: 4px;
+  border-style: solid;
+  border-width: 1px;
+  padding: 1px 7px 2px;
+}
+
+button a {
+  color: black;
+}
+.actions button {
+  border: none;
+}
+
+#homeBtn {
+  left: 10px;
+  bottom: 20%;
+}
+
+
+
+#notice {
+  position: absolute;
+  right: 0px;
+  background: green;
+  -webkit-animation: slide 0.5s forwards;
+  -webkit-animation-delay: 1s;
+  animation: slide 0.5s forwards;
+  animation-delay: 1s;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+@-webkit-keyframes slide {
+
+    99% { right:  -800px;}
+    50% { opacity: 0.5;   }
+    100% {opacity: 0;}
+}
+
+@keyframes slide {
+    99% { right:  -800px;}
+    50% { opacity: 0.5;   }
+    100% { opacity: 0;}
+}
+
+
+.new_profile {
+  background-color: white;
+  margin: 0 auto;
+  width: 200px;
+  padding: 10px;
+  border: 1px solid grey;
+  border-radius: 1%;
+}
+
+.new_profile .field, .new_profile .actions{
+  margin: 10px 0 0 0;
+}
+
+.field label {
+  left: 5px;
+}
+
+
+#error_explanation {
+  width: 100%;
+}
+
+// bootstrap changes
+
+.row {
+  margin: 20px 15px 20px 15px;
+
+}
+
+img {
+  border: 3px solid grey;
+  opacity: 0.5;
+}
+
+img:hover {
+  opacity: 1;
+}
+
+// sidebar
+
+.verticalSidebar {
+  margin-top: 20vh;
+}
+
+.sidebar{
+  position: absolute;
+  top: 90px;
+  width: 5%;
+  min-height: 80vh;
+  background-color: grey;
+  opacity: 0.7;
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.sidebarToggle {
+  display: none;
+  margin-top: 50px;
+}
+
+.sidebar .col h1 {
+  margin-bottom: 20px;
+}
+
+.sidebar:hover .sidebarToggle {
+  display: inline-block;
+}
+
+.sidebar:hover .verticalSidebar {
+  display: none;
+  cursor: pointer;
+}
+
+.sidebar:hover {
+  width: 20%;
+}
+
+#tableBg {
+  background-color: white;
+  padding: 20px;
+  border: solid 1px grey;
+}
+
+.tableFix {
+  background-color: white;
+  padding: 20px;
+  border: solid 1px grey;
+  margin: 15px;
+}
+
+footer {
+ position: absolute;
+ width: 100%;
+ background-color: grey;
+ color: black;
+ text-align: center;
+
+}
+
+footer p {
+  margin: 20px;
+}

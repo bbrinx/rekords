@@ -1,0 +1,38 @@
+<header>
+
+<div class="spin">
+  <%= link_to ("<div class='logo'>
+    <h1 style='color:red'>R</h1><h1 style='color:blue'>E</h1><h1 style='color:yellow'>K</h1><h1 style='color:blue'>O</h1><h1 style='color:green'>R</h1><h1 style='color:pink'>D</h1><h1 style='color:brown'>S</h1>
+    </div>
+    ").html_safe, homes_path %>
+</div>
+
+
+
+    <nav id="nav_wrap">
+      <ul>
+        <!-- <li>
+          <%= link_to 'Profile', profiles_path %>
+        </li> -->
+        <li>
+          <%= link_to 'Categories', categories_path %>
+          <ul>
+            <li><%= link_to 'New Category', new_category_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'Records', records_path %>
+          <ul>
+            <li><%= link_to 'New Record', new_record_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'Groups', groups_path %>
+          <ul>
+            <li><%= link_to 'New Group', new_group_path %></li>
+          </ul>
+        </li>
+        <li><%= link_to 'Sign up', new_profile_registration_path %></li>
+        <li><%= link_to 'Log in', new_profile_session_path %></li>
+      </ul>
+</nav>
+
+  </header>
