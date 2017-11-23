@@ -23,8 +23,6 @@ default: &default
 development:
   <<: *default
   database: rekords_development
-  username: admin
-  password: admin
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -59,8 +57,6 @@ development:
 test:
   <<: *default
   database: rekords_test
-  username: admin
-  password: admin
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -84,5 +80,3 @@ test:
 production:
   <<: *default
   database: rekords_production
-  username: admin
-  password: admin
