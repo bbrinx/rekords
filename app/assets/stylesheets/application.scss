@@ -21,10 +21,11 @@ header {
   height: 90px;
   background: rgba(255,255,255,0.8);;
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid grey;
 }
 
 .logo {
+  color:#355993;
   margin: 20px;
   position: absolute;
   top:0px;
@@ -33,21 +34,6 @@ header {
 
 .logo h1{
   display: inline;
-}
-
- .spin:hover {
-  animation: zoom .5s forwards;
- -webkit-animation: zoom .5s forwards;
-
-}
-
-@keyframes zoom {
-  0% {
-    transform: scaleX(1);
-  }
-  100% {
-    transform: scaley(1.1);
-  }
 }
 
 // Navigation
@@ -136,11 +122,6 @@ body {
   font-size: 15px;
   background: #f2f5f8;
   font-weight: 300;
-  background-image: url("medal_bg.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 1500px;
-  background-position-x: 50%;
 
 }
 
@@ -149,8 +130,7 @@ h1, h2 {
 }
 
 .app-cont p {
-  text-align: justify
-
+  text-align: justify;
 }
 
 .app-cont h1 {
@@ -175,31 +155,26 @@ a {
   max-width: 650px;
   min-height: 100vh;
   margin: 0 auto;
-  background: rgba(255,255,255,0.8);
+  background: rgb(255,255,255);
   padding: 1em 0;
   position: relative;
   border: 1px solid black;
-  border-bottom: none;
-  border-top: none;
+  border: none;
 }
 
 
 table {
-
   margin-bottom: 50px;
 }
+
 table thead {
-  background: black;
+  color: blue;
   opacity: 0.5;
-  color: white;
 }
 
 th {
   padding: 0 0 0 10px;
-}
-
-td {
-  visibility: hidden;
+  margin-bottom: 20px;
 }
 
 .cat {
@@ -208,12 +183,6 @@ td {
 
 tr:hover td{
   visibility: visible;
-
-}
-
-tbody tr:nth-child(even) {
-  background: grey;
-
 }
 
 tbody tr td {
@@ -302,51 +271,12 @@ button a {
 }
 
 img {
-  border: 3px solid grey;
+  border: 1px solid grey;
   opacity: 0.5;
 }
 
 img:hover {
   opacity: 1;
-}
-
-// sidebar
-
-.verticalSidebar {
-  margin-top: 20vh;
-}
-
-.sidebar{
-  position: absolute;
-  top: 90px;
-  width: 5%;
-  min-height: 80vh;
-  background-color: grey;
-  opacity: 0.7;
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
-}
-
-.sidebarToggle {
-  display: none;
-  margin-top: 50px;
-}
-
-.sidebar .col h1 {
-  margin-bottom: 20px;
-}
-
-.sidebar:hover .sidebarToggle {
-  display: inline-block;
-}
-
-.sidebar:hover .verticalSidebar {
-  display: none;
-  cursor: pointer;
-}
-
-.sidebar:hover {
-  width: 20%;
 }
 
 #tableBg {
@@ -362,15 +292,7 @@ img:hover {
   margin: 15px;
 }
 
-footer {
- position: absolute;
- width: 100%;
- background-color: grey;
- color: black;
- text-align: center;
-
-}
-
-footer p {
-  margin: 20px;
+.tableContent {
+  color: black;
+  background-color: white;
 }
