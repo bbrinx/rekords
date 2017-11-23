@@ -164,21 +164,17 @@ a {
 
 
 table {
-
   margin-bottom: 50px;
 }
+
 table thead {
-  background: black;
+  color: blue;
   opacity: 0.5;
-  color: white;
 }
 
 th {
   padding: 0 0 0 10px;
-}
-
-td {
-  visibility: hidden;
+  margin-bottom: 20px;
 }
 
 .cat {
@@ -187,12 +183,6 @@ td {
 
 tr:hover td{
   visibility: visible;
-
-}
-
-tbody tr:nth-child(even) {
-  background: grey;
-
 }
 
 tbody tr td {
@@ -300,4 +290,9 @@ img:hover {
   padding: 20px;
   border: solid 1px grey;
   margin: 15px;
+}
+
+.tableContent {
+  color: black;
+  background-color: white;
 }
