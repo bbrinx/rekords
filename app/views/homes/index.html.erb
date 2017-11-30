@@ -1,0 +1,51 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Willkommen bei REKORDS</h1>
+
+<div class="row">
+  <div class="col">
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p style="font-weight:bold">Zeige aktuelle Rekorde an:</p>
+  </div>
+  <div class="col">
+    <p style="font-weight:bold">Zeige alle Kategorien an:</p>
+
+  </div>
+
+</div>
+<div class="row">
+  <div class="col">
+    <%= link_to (image_tag 'target.png', width: '100%', title: 'Klick for Rekords'), records_path%>
+
+  </div>
+  <div class="col">
+    <%= link_to (image_tag 'categories.jpeg', width: '100%', title: 'Klick for Categories'), categories_path %>
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="col">
+    <p style="font-weight:bold">Zeige alle Gruppen an:</p>
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col">
+    <%= link_to (image_tag 'group.jpeg', width: '48%', title: 'Klick for Groups'), groups_path%>
+
+  </div>
+
+</div>
+
+
+<br>
+
+
+
+<!-- <%= link_to 'Back to Home', homes_path %> -->
