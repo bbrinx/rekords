@@ -6,11 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
- 
-profile = Profile.create!(
+Profile.create!(
   username: Faker::Internet.user_name, 
   email: Faker::Internet.user_name + "@#{Faker::Internet.domain_name}",
   password: Faker::Internet.password
+)
+admin = Profile.create!(
+  username: "testi", 
+  email: "test@test.de",
+  password: "testtest"
 )
 category_sport = Category.create!(
   name: "Sport"
@@ -36,7 +40,7 @@ categories = [category_sport, category_eating, category_knowledge, category_othe
     description: Faker::SiliconValley.quote,
     date: Faker::Date.backward,
     category_id: categories.sample,
-    profile_id: profile
+    profile_id: admin
   )
 end
 
