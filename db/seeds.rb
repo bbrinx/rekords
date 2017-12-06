@@ -39,8 +39,8 @@ categories = [category_sport, category_eating, category_knowledge, category_othe
     name: Faker::SiliconValley.invention,
     description: Faker::SiliconValley.quote,
     date: Faker::Date.backward,
-    profile_id: test_user.id,
-    category_id: categories.sample.id,
+    profile: test_user,
+    category: categories.sample,
   )
 end
 

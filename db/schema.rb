@@ -61,4 +61,6 @@ ActiveRecord::Schema.define(version: 20171130111025) do
     t.index ["profile_id"], name: "index_records_on_profile_id"
   end
 
+  add_foreign_key "records", "categories"
+  add_foreign_key "records", "profiles"
 end

@@ -1,4 +1,4 @@
 class Record < ApplicationRecord
-  belongs_to :Category, optional: true
-  belongs_to :Profile, optional: true
+  belongs_to :category
+  belongs_to :profile
 end
