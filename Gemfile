@@ -26,8 +26,8 @@ gem 'rspec-rails', '~> 3.6'
 gem 'uglifier', '>= 1.3.0'
 # Use Devise for authentication
 gem 'devise'
-# See https://github.com/rails/execjs#readme for more supported runtimes
-gem 'faker'
+# Use faker to populate the database with random data
+gem 'faker', github: 'stympy/faker'
 # gem 'therubyracer', platforms: :ruby
 
 # Use CoffeeScript for .coffee assets and views
@@ -49,7 +49,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
@@ -59,7 +58,6 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rspec-rails', '~> 3.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

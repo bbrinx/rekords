@@ -5,3 +5,42 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+ 
+profile = Profile.create!(
+  username: Faker::Internet.user_name, 
+  email: Faker::Internet.user_name + "@#{Faker::Internet.domain_name}",
+  password: Faker::Internet.password
+).save!
+puts
+category_sport = Category.create!(
+  name: "Sport"
+).save!
+puts
+category_eating = Category.create!(
+  name: "Eating"
+)
+category_drinking = Category.create!(
+  name: "Drinking"
+)
+category_knowledge = Category.create!(
+  name: "Knowledge"
+)
+category_other = Category.create!(
+  name: "Other"
+)
+
+categories = [category_sport, category_eating, category_knowledge, category_other]
+
+100.times do |i|
+  Record.create!(
+    name: Faker::SiliconValley.invention,
+    description: Faker::SiliconValley.quote,
+    date: Faker::Date.backward,
+    category_id: category_eating,
+    profile_id: profile
+  )
+end
+
+
+  
