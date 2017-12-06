@@ -11,7 +11,7 @@ Profile.create!(
   email: Faker::Internet.user_name + "@#{Faker::Internet.domain_name}",
   password: Faker::Internet.password
 )
-admin = Profile.create!(
+test_user = Profile.create!(
   username: "testi", 
   email: "test@test.de",
   password: "testtest"
@@ -39,8 +39,8 @@ categories = [category_sport, category_eating, category_knowledge, category_othe
     name: Faker::SiliconValley.invention,
     description: Faker::SiliconValley.quote,
     date: Faker::Date.backward,
-    category_id: categories.sample,
-    profile_id: admin
+    profile_id: test_user.id,
+    category_id: categories.sample.id,
   )
 end
 
