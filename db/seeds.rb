@@ -11,12 +11,10 @@ profile = Profile.create!(
   username: Faker::Internet.user_name, 
   email: Faker::Internet.user_name + "@#{Faker::Internet.domain_name}",
   password: Faker::Internet.password
-).save!
-puts
+)
 category_sport = Category.create!(
   name: "Sport"
-).save!
-puts
+)
 category_eating = Category.create!(
   name: "Eating"
 )
@@ -37,7 +35,7 @@ categories = [category_sport, category_eating, category_knowledge, category_othe
     name: Faker::SiliconValley.invention,
     description: Faker::SiliconValley.quote,
     date: Faker::Date.backward,
-    category_id: category_eating,
+    category_id: categories.sample,
     profile_id: profile
   )
 end
