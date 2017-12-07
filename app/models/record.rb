@@ -1,4 +1,4 @@
 class Record < ApplicationRecord
-  belongs_to :Category
-  belongs_to :Profile
+  belongs_to :category
+  belongs_to :profile
 end
