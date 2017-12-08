@@ -1,19 +1,16 @@
 <header>
 
-<div>
-  <%= link_to ("<div class='logo'>
-    <h1>Rekords</h1>
+  <div>
+    <%= link_to ("<div class='logo'>
+      <h1>Rekords</h1>
+      </div>
+      ").html_safe, homes_path %>
     </div>
-    ").html_safe, homes_path %>
-</div>
 
 
-
+    <% if profile_signed_in? %>
     <nav id="nav_wrap">
       <ul>
-        <!-- <li>
-          <%= link_to 'Profile', profiles_path %>
-        </li> -->
         <li>
           <%= link_to 'Categories', categories_path %>
           <ul>
@@ -30,9 +27,20 @@
             <li><%= link_to 'New Group', new_group_path %></li>
           </ul>
         </li>
+        <li><%= link_to 'Logout', destroy_profile_session_path %></li>
+      </ul>
+    </nav>
+    <% else %>
+    <nav id="nav_wrap">
+      <ul>
         <li><%= link_to 'Sign up', new_profile_registration_path %></li>
         <li><%= link_to 'Log in', new_profile_session_path %></li>
+
       </ul>
-</nav>
+    </nav>
+    <% end %>
+
+
+
 
   </header>
