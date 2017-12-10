@@ -13,7 +13,7 @@ env:
 - DOCKER_COMPOSE_VERSION=1.4.2
 
 before_install:
-- docker-compose build up
+- docker-compose up
 
 script:
 - bundle exec rake test
