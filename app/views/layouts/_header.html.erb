@@ -1,10 +1,7 @@
 <header>
 
-  <div>
-    <%= link_to ("<div class='logo'>
-      <h1>Rekords</h1>
-      </div>
-      ").html_safe, homes_path %>
+  <div class="logo">
+    <%= link_to image_tag("rekords.png"), root_path %>
     </div>
 
 
@@ -13,21 +10,23 @@
       <ul>
         <li>
           <%= link_to 'Categories', categories_path %>
-          <ul>
+          <!-- <ul>
             <li><%= link_to 'New Category', new_category_path %></li>
-          </ul>
+          </ul> -->
         </li>
         <li><%= link_to 'Records', records_path %>
-          <ul>
+          <!-- <ul>
             <li><%= link_to 'New Record', new_record_path %></li>
-          </ul>
+          </ul> -->
         </li>
         <li><%= link_to 'Groups', groups_path %>
-          <ul>
+          <!-- <ul>
             <li><%= link_to 'New Group', new_group_path %></li>
-          </ul>
+          </ul> -->
         </li>
-        <li><%= link_to 'Logout', destroy_profile_session_path %></li>
+        <li class="logOutBtn">
+              <%= link_to 'Logout', destroy_profile_session_path %>
+        </li>
       </ul>
     </nav>
     <% else %>

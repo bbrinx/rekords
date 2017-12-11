@@ -15,36 +15,35 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+$purple: #6477b9;
 
 header {
   width: 100%;
-  height: 90px;
+  height: 50px;
   background: rgba(255,255,255,0.8);;
-  text-align: center;
-  border-bottom: 1px solid grey;
+  // border-bottom: 1px solid grey;
 }
 
 .logo {
-  color:#355993;
-  margin: 20px;
+  margin-top: 7px;
+  margin-left: 10px;
   position: absolute;
-  top:0px;
-  left: 0px;
+
 }
 
-.logo h1{
-  display: inline;
+.logo img{
+  border: none;
+  opacity: 0.9;
+  width: 50%;
 }
 
 // Navigation
 
 #nav_wrap
 {
-	margin-top:30px;
+	margin-top:7px;
+  margin-right: 10px;
   float: right;
-  background:  white;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
 }
 
 #nav_wrap ul
@@ -62,9 +61,11 @@ header {
 	color:#333;
 	text-decoration:none;
 	font-weight:700;
-	font-size:12px;
+	font-size:15px;
 	line-height:32px;
 	padding:0 15px;
+  z-index: 999;
+  position: relative;
 }
 
 #nav_wrap ul li
@@ -78,7 +79,7 @@ header {
 
 #nav_wrap ul li:hover
 {
-	// background:#f6f6f6
+  color: lightblue;
 }
 
 #nav_wrap ul ul
@@ -117,10 +118,12 @@ header {
 
 
 
+// background by
+// <a href="http://www.freepik.com">Designed by Kjpargeter / Freepik</a>
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
-  background: #f2f5f8;
+  background-image: url(bg.jpg);
   font-weight: 300;
 
 }
@@ -190,22 +193,53 @@ tbody tr td {
 
 }
 
-button {
-  position: absolute;
-  color: black;
-  right: 10px;
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 1px 7px 2px;
+// Does not inherit
+.logOutBtn {
+  &:hover {
+    color: $purple;
+  }
+
+  &::before,
+  &::after {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+  }
+
+  &::before {
+    border-top: 2px solid $purple;
+    border-bottom: 2px solid $purple;
+    transform: scale3d(0,1,1); // Shrink only width
+  }
+
+  &::after {
+    border-left: 2px solid $purple;
+    border-right: 2px solid $purple;
+    transform: scale3d(1,0,1); // Shrink only height
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: scale3d(1,1,1);
+    transition: transform 0.5s;
+  }
 }
 
-button a {
-  color: black;
-}
-.actions button {
-  border: none;
+.logOutBtn {
+  background: none;
+  border: 0;
+
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 #homeBtn {
