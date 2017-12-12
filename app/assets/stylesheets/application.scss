@@ -15,12 +15,16 @@
 // Custom bootstrap variables must be set or imported *before* bootstrap.
 @import "bootstrap";
 
+@import "flexslider";
+
 $purple: #6477b9;
+$overlayBadge: rgba(0,0,0,0.5);
+$achievementBg: rgba(255,255,255,0.5);
 
 header {
   width: 100%;
   height: 50px;
-  background: rgba(255,255,255,0.8);;
+  background: rgba(255,255,255,0.5);
   // border-bottom: 1px solid grey;
 }
 
@@ -116,6 +120,19 @@ header {
 	display:block
 }
 
+.rekordContent {
+  background-color: $achievementBg;
+}
+
+#achievement {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  line-height: 50px;
+  margin: 0;
+}
 
 
 // background by
@@ -130,6 +147,7 @@ body {
 
 h1, h2 {
   text-align: center;
+  margin: 0px;
 }
 
 .app-cont p {
@@ -155,11 +173,11 @@ a {
 }
 
 .app-cont-thin {
-  max-width: 650px;
+  max-width: 760px;
   min-height: 100vh;
   margin: 0 auto;
-  background: rgb(255,255,255);
-  padding: 1em 0;
+  background: rgba(255,255,255,0.5);
+  // padding: 1em 0;
   position: relative;
   border: 1px solid black;
   border: none;
@@ -304,8 +322,44 @@ tbody tr td {
 
 }
 
+
+
+
+#full {
+  margin: 0px;
+  // margin-top: 10px;
+}
+
+
+// title overlayBadge
+// TODO: color fixing
+
+.full {
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  margin: 0;
+
+}
+
+.full::before {
+  content: '';
+  border-top: 25px solid transparent;
+  border-left: 25px solid rgba(255,255,255,0.5);
+  border-bottom: 25px solid transparent;
+}
+
+.full::after {
+  content: '';
+  border-top: 25px solid transparent;
+  border-right: 25px solid rgba(255,255,255,0.5);
+  border-bottom: 25px solid transparent;
+}
+
+.col h2 {
+  margin: 0 !important;
+}
+
 img {
-  border: 1px solid grey;
   opacity: 0.5;
 }
 
@@ -329,4 +383,23 @@ img:hover {
 .tableContent {
   color: black;
   background-color: white;
+}
+
+
+// flexslider
+
+ol.flex-control-nav, ol.flex-control-paging, ul.flex-direction-nav {
+}
+
+.flexslider {
+  background: none;
+  border: none;
+}
+
+.flex-direction-nav a {
+  height: 50px;
+}
+
+.flex-control-nav {
+  bottom: 50px;
 }

@@ -1,48 +1,44 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Willkommen bei REKORDS</h1>
+<!-- <h1>Setup your REKORDS</h1> -->
 
-<div class="row">
-  <div class="col">
-  </div>
+<!-- <div class="row">
+<div class="col">
 </div>
+</div> -->
 
-<div class="row">
+<div class="row full">
   <div class="col">
-    <p style="font-weight:bold">Zeige aktuelle Rekorde an:</p>
-  </div>
-  <div class="col">
-    <p style="font-weight:bold">Zeige alle Kategorien an:</p>
-
+    <h2>Aktuelle Rekorde</h2>
   </div>
 
-</div>
-<div class="row">
-  <div class="col">
-    <%= link_to (image_tag 'target.png', width: '100%', title: 'Klick for Rekords'), records_path%>
-
-  </div>
-  <div class="col">
-    <%= link_to (image_tag 'categories.jpeg', width: '100%', title: 'Klick for Categories'), categories_path %>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <p style="font-weight:bold">Zeige alle Gruppen an:</p>
-  </div>
 
 </div>
 
-<div class="row">
-  <div class="col">
-    <%= link_to (image_tag 'group.jpeg', width: '48%', title: 'Klick for Groups'), groups_path%>
-
+<div class="row" id="full">
+  <div class="flexslider">
+    <ul class="slides">
+      <li>
+        <%= image_tag(src="http://via.placeholder.com/760x300/ffffff", title: 'Platz 1')%>
+        <div class="rekordContent">
+          <p id="achievement">Christian hat 10 Bier (0,5) in 10 Minuten geext: Kannst du das toppen?</p>
+        </div>
+      </li>
+      <li>
+        <%= image_tag(src="http://via.placeholder.com/760x300/ff00ff", title: 'Platz 2')%>
+        <div class="rekordContent">
+          <p id="achievement">Joni hat sich 55 mal inm kreis gedreht und 3 bier geext ohne zu erbrechen: Kannst du das toppen?</p>
+        </div>
+      </li>
+      <li>
+        <%= image_tag(src="http://via.placeholder.com/760x300/00ff00", title: 'Platz 3')%>
+        <div class="rekordContent">
+          <p id="achievement">Ruby hat nicht viel gemacht... :S : Kannst du das toppen? Sure thang!</p>
+        </div>
+      </li>
+    </ul>
   </div>
-
 </div>
-
 
 <br>
 

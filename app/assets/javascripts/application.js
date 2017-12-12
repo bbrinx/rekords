@@ -17,3 +17,11 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require jquery.flexslider
+
+
+$(document).ready(function(){
+  $(".flexslider").flexslider({
+    slideshowSpeed: 3000
+  });
+});
