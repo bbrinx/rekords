@@ -1,3 +1,6 @@
+<div class="centering marginizer" id="tableBg">
+  <h1>New Record</h1>
+
 <%= form_with(model: record, local: true) do |form| %>
   <% if record.errors.any? %>
     <div id="error_explanation">
@@ -45,18 +48,12 @@
   </div>
 
   <div class="row">
-    <div class="col-2">
-      <div class="actions">
-        <%= form.submit %>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col">
-      <button type="submit" name="commit">
-        <%= link_to 'Back', categories_path %>
-      </button>
+    <div id="btnWrap">
+      <ul>
+        <li class="Btn">
+          <%= form.submit %>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
@@ -65,3 +62,5 @@
 
 
 <% end %>
+
+</div>

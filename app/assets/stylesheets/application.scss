@@ -303,7 +303,7 @@ tbody tr td {
   position: absolute;
   right: 0px;
   background: green;
-  -webkit-animation: slide 0.5s forwards;
+  // -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: 1s;
   animation: slide 0.5s forwards;
   animation-delay: 1s;
@@ -490,4 +490,19 @@ ol.flex-control-nav, ol.flex-control-paging, ul.flex-direction-nav {
 i {
   color: $rekordBlue;
   font-size: 13px !important;
+}
+input {
+   all: unset;
+}
+
+input {
+  display: block;
+color: #333;
+text-decoration: none;
+font-weight: 700;
+font-size: 15px;
+line-height: 32px;
+padding: 0 15px;
+z-index: 999;
+position: relative;
 }
