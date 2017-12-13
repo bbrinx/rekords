@@ -16,24 +16,13 @@
     <div class="col">
       <%= form.label :name %>
       <%= form.text_field :name, id: :category_name %>
-
     </div>
     <div class="col">
       <div class="actions">
         <button><%= form.submit %></button>
       </div>
     </div>
-
   </div>
-
-  <div class="row">
-    <div class="col">
-      <button type="submit" name="commit">
-        <%= link_to 'Back', categories_path %>
-      </button>
-    </div>
-  </div>
-
 </div>
 
 <% end %>
