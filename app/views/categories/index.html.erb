@@ -1,50 +1,51 @@
 <p id="notice"><%= notice %></p>
+<div class="row full">
+  <div class="col">
+    <%= image_tag("categories.png")%>
+  </div>
+</div>
+
+<div class="centering" id="tableBg">
 
 
-
-
-<h1>Categories</h1>
+  <div class="row">
+    <p>Um Rekorde erstellen zu können musst du als erstes eine Kategorie anlegen in der du dich messen willst.</p>
+  </div>
 
 <div class="row">
-  <p>Hier können Kategorien erstellt werden um euch mit euren Freunden zu messen.</p>
+  <div id="btnWrap">
+    <ul>
+      <li class="Btn">
+        <%= link_to 'Neue Kategorie erstellen', new_category_path %>
+      </li>
+    </ul>
+  </div>
 </div>
 
-<div class="row" id="tableBg">
+  <div class="row">
 
+    <div class="col categorieTableWrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th colspan="3">Options</th>
+          </tr>
+        </thead>
 
-<div class="col">
-  <table>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <!-- <th colspan="3"></th> -->
-      </tr>
-    </thead>
+        <tbody>
+          <% @categories.each do |category| %>
+          <tr>
+            <td class="cat"><%= category.name %></td>
+            <td><%= link_to ' <i class="fa fa-eye" aria-hidden="true">'.html_safe, category %></i></td>
+            <td><%= link_to ' <i class="fa fa-file-text" aria-hidden="true"></i>'.html_safe, edit_category_path(category) %></i></td>
+            <td><%= link_to ' <i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, category, method: :delete, data: { confirm: 'Are you sure?' } %></i></td>
 
-    <tbody>
-      <% @categories.each do |category| %>
-        <tr>
-          <td class="cat"><%= category.name %></td>
-          <td><%= link_to 'Show', category %></td>
-          <td><%= link_to 'Edit', edit_category_path(category) %></td>
-          <td><%= link_to 'Destroy', category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
-
-<div class="col">
-  <button type="submit" name="commit">
-    <%= link_to 'Add New Category', new_category_path %>
-  </button>
-</div>
-
-
+          </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
 </div>
-
-
-<button id="homeBtn" type="submit" name="commit">
-  <%= link_to 'Back to Home', homes_path %>
-</button>

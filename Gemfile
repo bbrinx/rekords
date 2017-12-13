@@ -5,8 +5,11 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+# slider for gallery or whateva
 gem 'flex-slider-rails'
 
+# icons
+gem 'font-awesome-rails', '~> 4.6', '>= 4.6.3.1'
 
 gem 'jquery-rails'
 
