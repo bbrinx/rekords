@@ -154,9 +154,7 @@ h1, h2 {
   text-align: justify;
 }
 
-.app-cont h1 {
-  margin-top: 20px;
-}
+
 
 .app-cont h1::before, .app-cont h1::after {
   content: "-";
@@ -174,10 +172,7 @@ a {
 
 .app-cont-thin {
   max-width: 760px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background: rgba(255,255,255,0.5);
-  // padding: 1em 0;
+
   position: relative;
   border: 1px solid black;
   border: none;
@@ -328,6 +323,28 @@ tbody tr td {
 #full {
   margin: 0px;
   // margin-top: 10px;
+
+}
+@-webkit-keyframes ShineAnimation{
+    from {
+        background-repeat:no-repeat;
+        background-image:-webkit-linear-gradient(
+            top left,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.0) 45%,
+            rgba(255, 255, 255, 0.5) 48%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.5) 52%,
+            rgba(255, 255, 255, 0.0) 57%,
+            rgba(255, 255, 255, 0.0) 100%
+        );
+        background-position:-800px -800px;
+        background-size: 800px 800px
+    }
+    to {
+        background-repeat:no-repeat;
+        background-position: 800px 800px;
+    }
 }
 
 
@@ -336,35 +353,29 @@ tbody tr td {
 
 .full {
   width: 100%;
-  background-color: rgba(0,0,0,0.5);
+  // background-color: rgba(0,0,0,0.5);
   margin: 0;
+  -webkit-animation-name: ShineAnimation;
+   -webkit-animation-duration: 7s;
+   -webkit-animation-iteration-count: infinite;
+   -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
 
 }
 
-.full::before {
-  content: '';
-  border-top: 25px solid transparent;
-  border-left: 25px solid rgba(255,255,255,0.5);
-  border-bottom: 25px solid transparent;
-}
 
-.full::after {
-  content: '';
-  border-top: 25px solid transparent;
-  border-right: 25px solid rgba(255,255,255,0.5);
-  border-bottom: 25px solid transparent;
-}
 
 .col h2 {
-  margin: 0 !important;
+
+       margin:auto;
 }
 
 img {
-  opacity: 0.5;
+  margin: 0 auto;
+width: 100%;
 }
 
 img:hover {
-  opacity: 1;
+  // opacity: 1;
 }
 
 #tableBg {
@@ -402,4 +413,5 @@ ol.flex-control-nav, ol.flex-control-paging, ul.flex-direction-nav {
 
 .flex-control-nav {
   bottom: 50px;
+  z-index: 999;
 }
