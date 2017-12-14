@@ -4,7 +4,16 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
-    @records = Record.all
+    if params[:keywords].present?
+      @keywords = params[:keywords]
+      recordsearch = RecordSearchTerm.new(@keywords)
+      @records = Record.where(
+        recordsearch.where_clause,
+        recordsearch.where_args).
+        order(recordsearch.order)
+    else
+      @records = Record.all
+    end
   end
 
   # GET /records/1

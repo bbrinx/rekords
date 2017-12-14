@@ -1,8 +1,8 @@
-FROM ruby:2.4.2
+FROM ruby:2.3.3
 RUN apt-get update -qq && apt-get install -y build-essential libpq-dev nodejs
 RUN mkdir /rekords
 WORKDIR /rekords
-ADD Gemfile /rekords/Gemfile
-ADD Gemfile.lock /rekords/Gemfile.lock
+COPY Gemfile /rekords/Gemfile
+COPY Gemfile.lock /rekords/Gemfile.lock
 RUN bundle install
-ADD . /rekords
+COPY . /rekords
