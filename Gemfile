@@ -29,6 +29,7 @@ gem 'devise'
 # Use faker to populate the database with random data
 gem 'faker', github: 'stympy/faker'
 # gem 'therubyracer', platforms: :ruby
+gem "autoprefixer-rails"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
