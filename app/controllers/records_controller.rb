@@ -1,4 +1,5 @@
 class RecordsController < ApplicationController
+  include ActiveModel::ForbiddenAttributesProtection
   before_action :set_record, only: [:show, :edit, :update, :destroy]
 
   # GET /records
@@ -33,7 +34,17 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    @record = Record.new(record_params)
+    validates :category_id
+    
+    user = current_profile
+    @category = Category.find(record_params[:category_id])
+
+    @record = user.records.new do |r|
+      r.name = record_params["name"]
+      r.description = record_params["description"]
+      r.date = record_params["date"]
+      r.category = @category
+    end
 
     respond_to do |format|
       if @record.save
@@ -44,6 +55,7 @@ class RecordsController < ApplicationController
         format.json { render json: @record.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PATCH/PUT /records/1

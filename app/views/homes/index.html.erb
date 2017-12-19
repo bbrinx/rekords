@@ -1,50 +1,28 @@
-<p id="notice"><%= notice %></p>
+<h1>Deine letzten Rekorde</h1>
 
-<h1>Willkommen bei REKORDS</h1>
+<section class="search-results row">
+  <table class="table table-responsive-lg table-bordered table-hover mt- col-1">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Date</th>
+      </tr>
+    </thead>
 
-<div class="row">
-  <div class="col">
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <p style="font-weight:bold">Zeige aktuelle Rekorde an:</p>
-  </div>
-  <div class="col">
-    <p style="font-weight:bold">Zeige alle Kategorien an:</p>
-
-  </div>
-
-</div>
-<div class="row">
-  <div class="col">
-    <%= link_to (image_tag 'target.png', width: '100%', title: 'Klick for Rekords'), records_path%>
-
-  </div>
-  <div class="col">
-    <%= link_to (image_tag 'categories.jpeg', width: '100%', title: 'Klick for Categories'), categories_path %>
-
-  </div>
-</div>
-
-<div class="row">
-  <div class="col">
-    <p style="font-weight:bold">Zeige alle Gruppen an:</p>
-  </div>
-
-</div>
-
-<div class="row">
-  <div class="col">
-    <%= link_to (image_tag 'group.jpeg', width: '48%', title: 'Klick for Groups'), groups_path%>
-
-  </div>
-
-</div>
-
-
-<br>
+    <tbody>
+      <% @records.each do |record| %>
+        <tr>
+          <td><%= link_to record.name, record %></td>
+          <td><%= record.description %></td>
+          <td><%= record.category.name %></td>
+          <td><%= record.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
 
 
 
