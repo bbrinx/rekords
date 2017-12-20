@@ -32,8 +32,10 @@ $(document).ready(function(){
     var email = $("#email").val();
     if (validateEmail(email)) {
       $("#email").css("background-color", "#faffbd");
+      console.log("ja");
     } else {
       $("#email").css("background-color", "#ec5353");
+      console.log("nein");
     }
     return false;
   }

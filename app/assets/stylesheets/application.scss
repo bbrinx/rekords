@@ -496,6 +496,7 @@ input {
 }
 
 input {
+  text-align: center;
   display: block;
 color: #333;
 text-decoration: none;
@@ -509,4 +510,10 @@ position: relative;
 
 .new_profile {
   width: auto;
+}
+
+
+.actions {
+  width: 100px;
+  height: 50px;
 }

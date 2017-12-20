@@ -4,34 +4,28 @@
   <%= devise_error_messages! %>
 
   <h2>Sign up</h2>
+
+  <br>
   <div class="field">
-    <!-- <%= f.label :email %><br /> -->
     <%= f.text_field :email, placeholder: 'E-mail', required: true, autofocus: true, :id=>"email" %>
-    <div id="hook">
-
-    </div>
   </div>
-
-
-
+  <br>
   <div class="field">
-    <!-- <%= f.label :password %> -->
     <%= f.password_field :password,placeholder: 'Password (min. 6 chars.)', autocomplete: "off" %>
-
     <% if @minimum_password_length %>
-    <!-- <em>(<%= @minimum_password_length %> characters minimum)</em> -->
     <% end %><br />
   </div>
-
   <div class="field">
-    <!-- <%= f.label :password_confirmation %><br /> -->
     <%= f.password_field :password_confirmation, autocomplete: "off",placeholder: 'Password Confirmation' %>
-    <!-- <h2 id='result'></h2> -->
-
   </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
+  <br>
+  <br>
+  <div class="actions" id="btnWrap">
+    <ul>
+      <li class="Btn">
+        <%= f.submit "Sign up" %>
+      </li>
+    </ul>
   </div>
   <% end %>
 
