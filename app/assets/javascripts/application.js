@@ -21,7 +21,22 @@
 
 
 $(document).ready(function(){
-  $(".flexslider").flexslider({
-    slideshowSpeed: 7000
-  });
+
+// email validation
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+  function validate() {
+    $("#result").text("");
+    var email = $("#email").val();
+    if (validateEmail(email)) {
+      $("#email").css("background-color", "#faffbd");
+    } else {
+      $("#email").css("background-color", "#ec5353");
+    }
+    return false;
+  }
+  $("#email").focusout(validate);
+
 });
