@@ -15,23 +15,23 @@
 
   <div class="tableFix">
     <div class="row">
-      <div class="col-3">
+      <!-- <div class="col-3">
         <%= form.label :username %>
 
-      </div>
+      </div> -->
       <div class="col">
-        <%= form.text_field :username, id: :group_username %>
+        <%= form.text_field :username, id: :group_username, placeholder: "Username" %>
 
       </div>
     </div>
 
     <div class="row">
-      <div class="col-3">
+      <!-- <div class="col-3">
         <%= form.label :password %>
 
-      </div>
+      </div> -->
       <div class="col">
-        <%= form.text_field :password, id: :group_password %>
+        <%= form.text_field :password, id: :group_password, placeholder: "Password" %>
 
       </div>
     </div>
@@ -43,6 +43,11 @@
             <%= form.submit %>
           </li>
         </ul>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+          <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, groups_path %>
       </div>
     </div>
 

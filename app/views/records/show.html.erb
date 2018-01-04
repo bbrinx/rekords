@@ -1,4 +1,13 @@
 <p id="notice"><%= notice %></p>
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p>Categories</p>
+    </div>
+  </div>
+</div>
+<div class="centering" id="tableBg">
 
 <p>
   <strong>Name:</strong>
@@ -19,6 +28,8 @@
   <strong>Date:</strong>
   <%= @record.date %>
 </p>
+
+</div>
 
 <%= link_to 'Edit', edit_record_path(@record) %> |
 <%= link_to 'Back', records_path %>

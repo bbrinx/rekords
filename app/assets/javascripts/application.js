@@ -41,4 +41,6 @@ $(document).ready(function(){
   }
   $("#email").focusout(validate);
 
+
+
 });

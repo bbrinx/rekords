@@ -13,16 +13,24 @@
  */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+
+$overlayBadge: rgba(0,0,0,0.5);
+$achievementBg: rgba(255,255,255,0.5);
+$rekordsBlue: #3e6c9b;
+$rekordsLightBlue: #67a8ea;
+
 @import "bootstrap";
 
 @import "flexslider";
 
 @import "font-awesome";
 
-
-$overlayBadge: rgba(0,0,0,0.5);
-$achievementBg: rgba(255,255,255,0.5);
-$rekordBlue: #3e6c9b;
+@font-face {
+  font-family: 'SuperMario256';
+  src:  url('SuperMario256.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 header {
   width: 100%;
@@ -30,6 +38,13 @@ header {
   background: rgba(255,255,255,0.5);
   // border-bottom: 1px solid grey;
 }
+
+#super {
+  font-family: 'SuperMario256';
+  font-size: 35px;
+  // color: $rekordsBlue;
+      margin: 10px 0px 10px 0;
+  }
 
 .logo {
   margin-top: 7px;
@@ -168,8 +183,9 @@ body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
   background-image: url(bg.jpg);
-  background-size: cover;
+  // background-size: cover;
   font-weight: 300;
+      background-repeat: no-repeat;
 
 }
 
@@ -182,8 +198,6 @@ h1, h2 {
   text-align: justify;
 }
 
-
-
 .app-cont h1::before, .app-cont h1::after {
   content: "-";
   padding: 0 3px 0 3px;
@@ -195,17 +209,50 @@ a {
 
 
 table {
+  // border-collapse: unset !important;
   margin-bottom: 50px;
 }
 
-table thead {
-  color: $rekordBlue;
+th:nth-child(2) {
+  width: 12%;
+}
+
+tr:nth-child(even) {
+  background-color: $rekordsLightBlue;
+}
+
+.table  {
+  border-spacing: 0px;
+  // color: $rekordsBlue;
   // opacity: 0.5;
+  border: solid 1px black;
 }
 
 th {
   padding: 0 0 0 10px;
   margin-bottom: 20px;
+}
+
+.table th, .table td {
+  padding: 0px;
+  padding-left: 10px;
+}
+
+// .table td:nth-child(2), .table th:nth-child(2) {
+//   display: none;
+// }
+
+.table th:nth-child(1) {
+  width: 15%;
+}
+.table th:nth-child(2) {
+  width: 35%;
+}
+.table th:nth-child(3) {
+  width: 12%;
+}
+.table th:nth-child(4) {
+  width: 12%;
 }
 
 .cat {
@@ -237,14 +284,14 @@ tbody tr td {
   }
 
   &::before {
-    border-top: 2px solid $rekordBlue;
-    border-bottom: 2px solid $rekordBlue;
+    border-top: 2px solid $rekordsBlue;
+    border-bottom: 2px solid $rekordsBlue;
     transform: scale3d(0,1,1); // Shrink only width
   }
 
   &::after {
-    border-left: 2px solid $rekordBlue;
-    border-right: 2px solid $rekordBlue;
+    border-left: 2px solid $rekordsBlue;
+    border-right: 2px solid $rekordsBlue;
     transform: scale3d(1,0,1); // Shrink only height
   }
 
@@ -281,7 +328,7 @@ tbody tr td {
   }
 
   &::before {
-    border-bottom: 2px solid $rekordBlue;
+    border-bottom: 2px solid $rekordsBlue;
     transform: scale3d(0,1,1); // Shrink only width
   }
 
@@ -302,7 +349,9 @@ tbody tr td {
 #notice {
   position: absolute;
   right: 0px;
-  background: green;
+  background: $rekordsBlue;
+  font-family: 'SuperMario256';
+
   // -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: 1s;
   animation: slide 0.5s forwards;
@@ -391,11 +440,11 @@ tbody tr td {
 .full {
   width: 100%;
   // background-color: rgba(0,0,0,0.5);
-  margin: 0;
-  -webkit-animation-name: ShineAnimation;
-   -webkit-animation-duration: 7s;
-   -webkit-animation-iteration-count: infinite;
-   -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
+  // margin: 0;
+  // -webkit-animation-name: ShineAnimation;
+  //  -webkit-animation-duration: 7s;
+  //  -webkit-animation-iteration-count: infinite;
+  //  -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
 
 }
 
@@ -421,6 +470,10 @@ img:hover {
   padding: 20px;
   border: solid 1px grey;
   opacity: 0.8;
+}
+
+.table-bordered {
+    border: solid 1px black;
 }
 
 .tableFix {
@@ -479,16 +532,19 @@ ol.flex-control-nav, ol.flex-control-paging, ul.flex-direction-nav {
   border-color: #981723;
 }
 
-
-// categorie table styles
-
-.categorieTableWrapper {
-
-  max-width: 600px;
-      margin: 0 auto;
+#categoriesTable {
+  width: 100%;
+  border: solid 1px black;
 }
+
+#categoriesTableBg {
+  background-color: $rekordsBlue;
+  border: solid 1px black;
+}
+
+
 i {
-  color: $rekordBlue;
+  color: $rekordsBlue;
   font-size: 13px !important;
 }
 input {
@@ -516,4 +572,15 @@ position: relative;
 .actions {
   width: 100px;
   height: 50px;
+}
+
+
+#keywords {
+  margin-right: 0px;
+}
+
+
+#group_username, #group_password {
+  margin: 0 auto;
+  background-color: $rekordsLightBlue;
 }
