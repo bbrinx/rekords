@@ -172,7 +172,7 @@ header {
 
 p {
   text-align: center;
-  line-height: 50px;
+  // line-height: 50px;
   margin: 0;
 }
 
@@ -583,4 +583,13 @@ position: relative;
 #group_username, #group_password {
   margin: 0 auto;
   background-color: $rekordsLightBlue;
+  border-radius: 3%;
+}
+
+#inliner, #inliner p {
+  display: inline-flex;
+}
+
+#inliner p {
+  margin: 0px 10px 0px 10px;
 }

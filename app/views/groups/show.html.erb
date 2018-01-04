@@ -2,16 +2,29 @@
 
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Username:</strong>
-  <%= @group.username %>
-</p>
+<div class="row">
+  <div class="col" id="inliner">
+    <p>
+      <strong>Username:</strong>
+      <%= @group.username %>
+    </p>
+    <p>
+      <strong>Password:</strong>
+      <%= @group.password %>
+    </p>
+  </div>
+  <div class="col">
+    <%= link_to '<i class="fa fa-file-text" aria-hidden="true"></i>'.html_safe, edit_group_path(@group) %>
 
-<p>
-  <strong>Password:</strong>
-  <%= @group.password %>
-</p>
+  </div>
 
-<%= link_to 'Edit', edit_group_path(@group) %> |
-<%= link_to 'Back', groups_path %>
+</div>
+
+
+
+<div class="row">
+  <div class="col">
+      <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, groups_path %>
+  </div>
+</div>
 </div>

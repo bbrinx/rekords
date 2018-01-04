@@ -1,6 +1,13 @@
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p id="replace">New Category</p>
+    </div>
+  </div>
+</div>
 
-<div class="centering marginizer" id="tableBg">
-  <h1>New Category</h1>
+<div class="centering" id="tableBg">
   <%= form_with(model: category, local: true) do |form| %>
   <% if category.errors.any? %>
   <div id="error_explanation">
@@ -29,5 +36,8 @@
       </div>
     </div>
   </div>
+
+  <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, categories_path %>
+
   <% end %>
 </div>

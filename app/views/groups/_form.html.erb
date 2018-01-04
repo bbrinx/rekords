@@ -1,4 +1,13 @@
-<div class="centering marginizer" id="tableBg">
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p>New Group</p>
+    </div>
+  </div>
+</div>
+
+<div class="centering" id="tableBg">
 
 <%= form_with(model: group, local: true) do |form| %>
   <% if group.errors.any? %>
