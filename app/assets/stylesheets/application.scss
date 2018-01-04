@@ -44,11 +44,18 @@ header {
   font-size: 35px;
   // color: $rekordsBlue;
       margin: 10px 0px 10px 0;
+
+  }
+
+  #super p {
+    background: -webkit-linear-gradient(#0202c7, #7a9abb);
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
   }
 
 .logo {
-  margin-top: 7px;
-  margin-left: 10px;
+
   position: absolute;
 
 }
@@ -56,7 +63,7 @@ header {
 .logo img{
   border: none;
   opacity: 0.9;
-  width: 50%;
+  width: 40%;
 }
 
 // Navigation
@@ -183,7 +190,7 @@ body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
   background-image: url(bg.jpg);
-  // background-size: cover;
+  background-size: cover;
   font-weight: 300;
       background-repeat: no-repeat;
 
@@ -347,8 +354,10 @@ tbody tr td {
 
 
 #notice {
+  margin: 10px;
   position: absolute;
   right: 0px;
+  bottom: 10%;
   background: $rekordsBlue;
   font-family: 'SuperMario256';
 
@@ -362,13 +371,13 @@ tbody tr td {
 
 @-webkit-keyframes slide {
 
-    99% { right:  -800px;}
+    99% { right:  -820px;}
     50% { opacity: 0.5;   }
     100% {opacity: 0;}
 }
 
 @keyframes slide {
-    99% { right:  -800px;}
+    99% { right:  -820px;}
     50% { opacity: 0.5;   }
     100% { opacity: 0;}
 }
@@ -579,8 +588,12 @@ position: relative;
   margin-right: 0px;
 }
 
+#record_description {
+  display: block;
+  border: none;
+}
 
-#group_username, #group_password {
+#group_username, #group_password, #category_name, #record_name,#record_description {
   margin: 0 auto;
   background-color: $rekordsLightBlue;
   border-radius: 3%;
