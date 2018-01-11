@@ -1,48 +1,48 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Groups</h1>
-
-<div class="row">
-  <p>Erstelle deine Gruppe:</p>
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p>Groups</p>
+    </div>
+  </div>
 </div>
 
-<div class="row" id="tableBg">
 
-<div class="col">
-  <table>
-    <thead>
-      <tr>
-        <th>Username</th>
-        <th>Password</th>
-        <th colspan="1"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @groups.each do |group| %>
-        <tr class="tableContent">
-          <td><%= group.username %></td>
-          <td><%= link_to 'Show', group %></td>
-          <td><%= link_to 'Edit', edit_group_path(group) %></td>
-          <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
+<div class="centering" id="tableBg">
+  <div class="row">
+    <p>Erstelle deine Gruppe:</p>
+  </div>
+  <div class="row">
+    <div id="btnWrap">
+      <ul>
+        <li class="Btn">
+          <%= link_to 'Neue Gruppe erstellen', new_group_path %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table id="categoriesTable">
+        <thead id="categoriesTableBg">
+          <tr>
+            <th>Username</th>
+            <th>Password</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @groups.each do |group| %>
+          <tr class="tableContent">
+            <td><%= group.username %></td>
+            <td><%= link_to ' <i class="fa fa-eye" aria-hidden="true">'.html_safe, group %></i></td>
+            <td><%= link_to ' <i class="fa fa-file-text" aria-hidden="true"></i>'.html_safe, edit_group_path(group) %></i></td>
+            <td><%= link_to ' <i class="fa fa-trash-o" aria-hidden="true"></i>'.html_safe, group, method: :delete, data: { confirm: 'Are you sure?' } %></i></td>
+          </tr>
+          <% end %>
+        </tbody>
       </table>
+    </div>
+  </div>
 </div>
-
-<div class="col">
-  <button type="submit" name="commit">
-    <%= link_to 'New Group', new_group_path %>
-  </button>
-</div>
-
-
-
-
-
-</div>
-
-<button id="homeBtn" type="submit" name="commit">
-  <%= link_to 'Back to Home', homes_path %>
-</button>

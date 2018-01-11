@@ -1,3 +1,14 @@
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p id="replace">New Record</p>
+    </div>
+  </div>
+</div>
+
+<div class="centering" id="tableBg">
+
 <%= form_with(model: record, local: true) do |form| %>
   <% if record.errors.any? %>
     <div id="error_explanation">
@@ -13,31 +24,19 @@
 
 <div class="table borderless">
   <div class="row">
-    <div class="col-2">
-      <%= form.label :name %>
-
-    </div>
     <div class="col">
-      <%= form.text_field :name, id: :record_name %>
+      <%= form.text_field :name, id: :record_name, placeholder: "Record Name" %>
     </div>
   </div>
 
   <div class="row">
-    <div class="col-2">
-      <%= form.label :description %>
-
-    </div>
     <div class="col">
-      <%= form.text_area :description, id: :record_description %>
+      <%= form.text_area :description, id: :record_description,placeholder:"Your Description..." %>
 
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-2">
-      <%= form.label :date %>
-
-    </div>
+  <div class="row" style="    text-align: center;">
     <div class="col">
       <%= form.date_select :date, id: :record_date %>
 
@@ -63,16 +62,16 @@
     </div>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <button type="submit" name="commit">
-        <%= link_to 'Back', categories_path %>
-      </button>
-    </div>
+
+</div>
+
+<div class="row">
+  <div class="col">
+      <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, records_path %>
   </div>
 </div>
 
 
-
-
 <% end %>
+
+</div>

@@ -1,3 +1,14 @@
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p>New Group</p>
+    </div>
+  </div>
+</div>
+
+<div class="centering" id="tableBg">
+
 <%= form_with(model: group, local: true) do |form| %>
   <% if group.errors.any? %>
     <div id="error_explanation">
@@ -13,36 +24,46 @@
 
   <div class="tableFix">
     <div class="row">
-      <div class="col-3">
+      <!-- <div class="col-3">
         <%= form.label :username %>
 
-      </div>
+      </div> -->
       <div class="col">
-        <%= form.text_field :username, id: :group_username %>
+        <%= form.text_field :username, id: :group_username, placeholder: "Username" %>
 
       </div>
     </div>
 
     <div class="row">
-      <div class="col-3">
+      <!-- <div class="col-3">
         <%= form.label :password %>
 
-      </div>
+      </div> -->
       <div class="col">
-        <%= form.text_field :password, id: :group_password %>
+        <%= form.text_field :password, id: :group_password, placeholder: "Password" %>
 
       </div>
     </div>
 
     <div class="row">
-      <div class="col-2">
-        <div class="actions">
-          <%= form.submit %>
-        </div>
+      <div id="btnWrap">
+        <ul>
+          <li class="Btn">
+            <%= form.submit %>
+          </li>
+        </ul>
       </div>
     </div>
+    <div class="row">
+      <div class="col">
+          <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, groups_path %>
+      </div>
+    </div>
+
+
   </div>
 
 
 
 <% end %>
+</div>

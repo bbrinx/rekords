@@ -1,15 +1,16 @@
-<h2>Log in</h2>
 
-<div class="row">
+
+<div class="row" id="opacer">
+
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <h2>Log in</h2>
+  <br>
   <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.text_field :email, placeholder: 'E-mail', required: true, autofocus: true, :id=>"email" %>
   </div>
 
   <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password,placeholder: 'Password (min. 6 chars.)', autocomplete: "off" %>
   </div>
 
   <% if devise_mapping.rememberable? -%>
@@ -19,14 +20,14 @@
     </div>
   <% end -%>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+  <div class="actions" id="btnWrap">
+    <ul>
+      <li class="Btn">
+        <%= f.submit "Log in" %>
+      </li>
+    </ul>
   </div>
   <% end %>
 </div>
-
-<button id="homeBtn" type="submit" name="commit">
-  <%= link_to 'Back to Home', homes_path %>
-</button>
 
 <!-- <%= render "devise/shared/links" %> -->

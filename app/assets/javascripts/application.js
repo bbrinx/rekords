@@ -17,3 +17,30 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap
+//= require jquery.flexslider
+
+
+$(document).ready(function(){
+
+// email validation
+  function validateEmail(email) {
+    var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
+  }
+  function validate() {
+    $("#result").text("");
+    var email = $("#email").val();
+    if (validateEmail(email)) {
+      $("#email").css("background-color", "#faffbd");
+      console.log("ja");
+    } else {
+      $("#email").css("background-color", "#ec5353");
+      console.log("nein");
+    }
+    return false;
+  }
+  $("#email").focusout(validate);
+
+
+
+});
