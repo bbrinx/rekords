@@ -1,63 +1,43 @@
-<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
-
-<div class="row full">
+<div class="full">
   <div class="col">
-    <%= image_tag("aktuelleRekorde_alt.png")%>
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p>Deine letzten Rekorde</p>
+    </div>
   </div>
 </div>
-<div class="row" id="full">
-  <div class="flexslider">
-    <ul class="slides">
-      <li>
-        <%= image_tag(src="http://via.placeholder.com/760x300/5151F0", title: 'Platz 1')%>
-        <div class="rekordContent">
-          <p id="achievement">Christian hat 10 Bier (0,5) in 10 Minuten geext: Kannst du das toppen?</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag(src="http://via.placeholder.com/760x300/3434cc", title: 'Platz 2')%>
-        <div class="rekordContent">
-          <p id="achievement">Joni hat sich 55 mal inm kreis gedreht und 3 bier geext ohne zu erbrechen: Kannst du das toppen?</p>
-        </div>
-      </li>
-      <li>
-        <%= image_tag(src="http://via.placeholder.com/760x300/14149a", title: 'Platz 3')%>
-        <div class="rekordContent">
-          <p id="achievement">Ruby hat nicht viel gemacht... :S : Kannst du das toppen? Sure thang!</p>
-        </div>
-      </li>
-    </ul>
+
+
+<div class="centering" id="tableBg">
+
+  <div class="row">
+    <section class="search-results row">
+      <table class="table table-responsive-lg table-bordered table-hover mt- col-1">
+        <thead class="thead-dark">
+          <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Date</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @records.each do |record| %>
+            <tr>
+              <td><%= link_to record.name, record %></td>
+              <td><%= record.description %></td>
+              <td><%= record.category.name %></td>
+              <td><%= record.date %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </section>
   </div>
 </div>
-=======
-<h1>Deine letzten Rekorde</h1>
-
-<section class="search-results row">
-  <table class="table table-responsive-lg table-bordered table-hover mt- col-1">
-    <thead class="thead-dark">
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Category</th>
-        <th>Date</th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @records.each do |record| %>
-        <tr>
-          <td><%= link_to record.name, record %></td>
-          <td><%= record.description %></td>
-          <td><%= record.category.name %></td>
-          <td><%= record.date %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-</section>
 
 
 
 <!-- <%= link_to 'Back to Home', homes_path %> -->
->>>>>>> master
