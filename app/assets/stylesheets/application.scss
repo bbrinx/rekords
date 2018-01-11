@@ -13,38 +13,66 @@
  */
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
+
+$overlayBadge: rgba(0,0,0,0.5);
+$achievementBg: rgba(255,255,255,0.5);
+$rekordsBlue: #3e6c9b;
+$rekordsLightBlue: #67a8ea;
+
 @import "bootstrap";
 
+@import "flexslider";
+
+@import "font-awesome";
+
+@font-face {
+  font-family: 'SuperMario256';
+  src:  url('SuperMario256.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 header {
   width: 100%;
-  height: 90px;
-  background: rgba(255,255,255,0.8);;
-  text-align: center;
-  border-bottom: 1px solid grey;
+  height: 50px;
+  background: rgba(255,255,255,0.5);
+  // border-bottom: 1px solid grey;
 }
+
+#super {
+  font-family: 'SuperMario256';
+  font-size: 35px;
+  // color: $rekordsBlue;
+      margin: 10px 0px 10px 0;
+
+  }
+
+  #super p {
+    background: -webkit-linear-gradient(#0202c7, #7a9abb);
+
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+  }
 
 .logo {
-  color:#355993;
-  margin: 20px;
+
   position: absolute;
-  top:0px;
-  left: 0px;
+
 }
 
-.logo h1{
-  display: inline;
+.logo img{
+  border: none;
+  opacity: 0.9;
+  width: 40%;
 }
 
 // Navigation
 
 #nav_wrap
 {
-	margin-top:30px;
+	margin-top:7px;
+  margin-right: 10px;
   float: right;
-  background:  white;
-  border-top-left-radius: 2px;
-  border-bottom-left-radius: 2px;
 }
 
 #nav_wrap ul
@@ -56,15 +84,41 @@ header {
 	padding:0
 }
 
+#btnWrap {
+  margin: 0 auto;
+}
+
+#btnWrap ul {
+  list-style:none;
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0
+}
+
+#btnWrap ul a {
+  display:block;
+  color:#333;
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+  line-height:32px;
+  padding:0 15px;
+  z-index: 999;
+  position: relative;
+}
+
 #nav_wrap ul a
 {
 	display:block;
 	color:#333;
 	text-decoration:none;
 	font-weight:700;
-	font-size:12px;
+	font-size:15px;
 	line-height:32px;
 	padding:0 15px;
+  z-index: 999;
+  position: relative;
 }
 
 #nav_wrap ul li
@@ -78,7 +132,7 @@ header {
 
 #nav_wrap ul li:hover
 {
-	// background:#f6f6f6
+  color: lightblue;
 }
 
 #nav_wrap ul ul
@@ -115,26 +169,40 @@ header {
 	display:block
 }
 
+.rekordContent {
+  background-color: $achievementBg;
+}
+
+#achievement {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+  // line-height: 50px;
+  margin: 0;
+}
 
 
+// background by
+// <a href="http://www.freepik.com">Designed by Kjpargeter / Freepik</a>
 body {
   font-family: 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 15px;
-  background: #f2f5f8;
+  background-image: url(bg.jpg);
+  background-size: cover;
   font-weight: 300;
+      background-repeat: no-repeat;
 
 }
 
 h1, h2 {
   text-align: center;
+  margin: 0px;
 }
 
 .app-cont p {
   text-align: justify;
-}
-
-.app-cont h1 {
-  margin-top: 20px;
 }
 
 .app-cont h1::before, .app-cont h1::after {
@@ -146,35 +214,52 @@ a {
   text-decoration: none;
 }
 
-.app-cont {
-  max-width: 1080px;
-  margin: 0 auto;
-}
-
-.app-cont-thin {
-  max-width: 650px;
-  min-height: 100vh;
-  margin: 0 auto;
-  background: rgb(255,255,255);
-  padding: 1em 0;
-  position: relative;
-  border: 1px solid black;
-  border: none;
-}
-
 
 table {
+  // border-collapse: unset !important;
   margin-bottom: 50px;
 }
 
-table thead {
-  color: blue;
-  opacity: 0.5;
+th:nth-child(2) {
+  width: 12%;
+}
+
+tr:nth-child(even) {
+  background-color: $rekordsLightBlue;
+}
+
+.table  {
+  border-spacing: 0px;
+  // color: $rekordsBlue;
+  // opacity: 0.5;
+  border: solid 1px black;
 }
 
 th {
   padding: 0 0 0 10px;
   margin-bottom: 20px;
+}
+
+.table th, .table td {
+  padding: 0px;
+  padding-left: 10px;
+}
+
+// .table td:nth-child(2), .table th:nth-child(2) {
+//   display: none;
+// }
+
+.table th:nth-child(1) {
+  width: 15%;
+}
+.table th:nth-child(2) {
+  width: 35%;
+}
+.table th:nth-child(3) {
+  width: 12%;
+}
+.table th:nth-child(4) {
+  width: 12%;
 }
 
 .cat {
@@ -190,22 +275,75 @@ tbody tr td {
 
 }
 
-button {
-  position: absolute;
-  color: black;
-  right: 10px;
-  border-color: rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186);
-  border-radius: 4px;
-  border-style: solid;
-  border-width: 1px;
-  padding: 1px 7px 2px;
+// Does not inherit
+.Btn {
+  &:hover {
+    color: green;
+  }
+
+  &::before,
+  &::after {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+  }
+
+  &::before {
+    border-top: 2px solid $rekordsBlue;
+    border-bottom: 2px solid $rekordsBlue;
+    transform: scale3d(0,1,1); // Shrink only width
+  }
+
+  &::after {
+    border-left: 2px solid $rekordsBlue;
+    border-right: 2px solid $rekordsBlue;
+    transform: scale3d(1,0,1); // Shrink only height
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: scale3d(1,1,1);
+    transition: transform 0.5s;
+  }
 }
 
-button a {
-  color: black;
+.Btn,.menu {
+  background: none;
+  border: 0;
+
+
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
 }
-.actions button {
-  border: none;
+
+.menu {
+  &::before,
+  &::after {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+  }
+
+  &::before {
+    border-bottom: 2px solid $rekordsBlue;
+    transform: scale3d(0,1,1); // Shrink only width
+  }
+
+  &:hover::before,
+  &:hover::after {
+    transform: scale3d(1,1,1);
+    transition: transform 0.5s;
+  }
 }
 
 #homeBtn {
@@ -216,10 +354,14 @@ button a {
 
 
 #notice {
+  margin: 10px;
   position: absolute;
   right: 0px;
-  background: green;
-  -webkit-animation: slide 0.5s forwards;
+  bottom: 10%;
+  background: $rekordsBlue;
+  font-family: 'SuperMario256';
+
+  // -webkit-animation: slide 0.5s forwards;
   -webkit-animation-delay: 1s;
   animation: slide 0.5s forwards;
   animation-delay: 1s;
@@ -229,13 +371,13 @@ button a {
 
 @-webkit-keyframes slide {
 
-    99% { right:  -800px;}
+    99% { right:  -820px;}
     50% { opacity: 0.5;   }
     100% {opacity: 0;}
 }
 
 @keyframes slide {
-    99% { right:  -800px;}
+    99% { right:  -820px;}
     50% { opacity: 0.5;   }
     100% { opacity: 0;}
 }
@@ -270,19 +412,77 @@ button a {
 
 }
 
+
+
+
+#full {
+  margin: 0px;
+  // margin-top: 10px;
+
+}
+@-webkit-keyframes ShineAnimation{
+    from {
+        background-repeat:no-repeat;
+        background-image:-webkit-linear-gradient(
+            top left,
+            rgba(255, 255, 255, 0.0) 0%,
+            rgba(255, 255, 255, 0.0) 45%,
+            rgba(255, 255, 255, 0.5) 48%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.5) 52%,
+            rgba(255, 255, 255, 0.0) 57%,
+            rgba(255, 255, 255, 0.0) 100%
+        );
+        background-position:-100vw -100vw;
+        background-size: 100vw 100vw
+    }
+    to {
+        background-repeat:no-repeat;
+        background-position: 130vw 100vw;
+    }
+}
+
+
+// title overlayBadge
+// TODO: color fixing
+
+.full {
+  width: 100%;
+  // background-color: rgba(0,0,0,0.5);
+  // margin: 0;
+  // -webkit-animation-name: ShineAnimation;
+  //  -webkit-animation-duration: 7s;
+  //  -webkit-animation-iteration-count: infinite;
+  //  -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
+
+}
+
+
+
+.col h2 {
+
+       margin:auto;
+}
+
 img {
-  border: 1px solid grey;
-  opacity: 0.5;
+  display: block;
+  margin: 0 auto;
+
 }
 
 img:hover {
-  opacity: 1;
+  // opacity: 1;
 }
 
 #tableBg {
   background-color: white;
   padding: 20px;
   border: solid 1px grey;
+  opacity: 0.8;
+}
+
+.table-bordered {
+    border: solid 1px black;
 }
 
 .tableFix {
@@ -295,4 +495,114 @@ img:hover {
 .tableContent {
   color: black;
   background-color: white;
+}
+
+
+// flexslider
+
+ol.flex-control-nav, ol.flex-control-paging, ul.flex-direction-nav {
+}
+
+.flexslider {
+  background: none;
+  border: none;
+}
+
+.flex-direction-nav a {
+  height: 50px;
+}
+
+.flex-control-nav {
+  bottom: 50px;
+  z-index: 999;
+}
+
+.flex-direction-nav a:before, .flex-deirection-nav a {
+  text-shadow: none;
+}
+
+
+.centering {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+#opacer {
+  opacity: 0.8;
+}
+
+.marginizer {
+  margin-top: 83px;
+}
+
+
+#logoutBtnColor::before, #logoutBtnColor::after {
+  border-color: #981723;
+}
+
+#categoriesTable {
+  width: 100%;
+  border: solid 1px black;
+}
+
+#categoriesTableBg {
+  background-color: $rekordsBlue;
+  border: solid 1px black;
+}
+
+
+i {
+  color: $rekordsBlue;
+  font-size: 13px !important;
+}
+input {
+   all: unset;
+}
+
+input {
+  text-align: center;
+  display: block;
+color: #333;
+text-decoration: none;
+font-weight: 700;
+font-size: 15px;
+line-height: 32px;
+margin: 0 15px;
+z-index: 999;
+position: relative;
+}
+
+.new_profile {
+  width: auto;
+}
+
+
+.actions {
+  width: 100px;
+  height: 50px;
+}
+
+
+#keywords {
+  margin-right: 0px;
+}
+
+#record_description {
+  display: block;
+  border: none;
+}
+
+#group_username, #group_password, #category_name, #record_name,#record_description {
+  margin: 0 auto;
+  background-color: $rekordsLightBlue;
+  border-radius: 3%;
+}
+
+#inliner, #inliner p {
+  display: inline-flex;
+}
+
+#inliner p {
+  margin: 0px 10px 0px 10px;
 }

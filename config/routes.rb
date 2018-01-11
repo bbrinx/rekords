@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :new_profile_session
   resources :new_profile_registration
 
+  resources :destroy_profile_session
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 end

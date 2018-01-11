@@ -1,39 +1,45 @@
-<%= form_with(model: category, local: true) do |form| %>
-<% if category.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
-
-  <ul>
-    <% category.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<div class="field">
-  <div class="row" id="tableBg">
-    <div class="col">
-      <%= form.label :name %>
-      <%= form.text_field :name, id: :category_name %>
-
+<div class="full">
+  <div class="col">
+    <!-- <%= image_tag("categories.png")%> -->
+    <div id="super">
+      <p id="replace">New Category</p>
     </div>
-    <div class="col">
-      <div class="actions">
-        <button><%= form.submit %></button>
+  </div>
+</div>
+
+<div class="centering" id="tableBg">
+  <%= form_with(model: category, local: true) do |form| %>
+  <% if category.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(category.errors.count, "error") %> prohibited this category from being saved:</h2>
+    <ul>
+      <% category.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <div class="field">
+    <div class="row" id="tableBg">
+      <div class="col-lg-12">
+        <%= form.text_field :name, id: :category_name,placeholder: "Name" %>
       </div>
-    </div>
+      <div class="col-lg-12">
+        <div class="row">
+          <div id="btnWrap">
+            <ul>
+              <li class="Btn">
+                <%= form.submit %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
+    </div>
   </div>
 
-  <div class="row">
-    <div class="col">
-      <button type="submit" name="commit">
-        <%= link_to 'Back', categories_path %>
-      </button>
-    </div>
-  </div>
+  <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, categories_path %>
 
+  <% end %>
 </div>
-
-<% end %>
