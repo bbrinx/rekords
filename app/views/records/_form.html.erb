@@ -44,12 +44,30 @@
   </div>
 
   <div class="row">
+<<<<<<< HEAD
     <div id="btnWrap">
       <ul>
         <li class="Btn">
           <%= form.submit %>
         </li>
       </ul>
+=======
+    <div class="col-2">
+      <%= form.label :category %>
+
+    </div>
+    <div class="col">
+      <%= form.collection_select :category_id, Category.all, :id, :name %>
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <div class="actions">
+        <%= form.submit %>
+      </div>
+>>>>>>> master
     </div>
   </div>
 

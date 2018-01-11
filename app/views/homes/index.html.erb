@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p id="notice"><%= notice %></p>
 
 <div class="row full">
@@ -29,3 +30,34 @@
     </ul>
   </div>
 </div>
+=======
+<h1>Deine letzten Rekorde</h1>
+
+<section class="search-results row">
+  <table class="table table-responsive-lg table-bordered table-hover mt- col-1">
+    <thead class="thead-dark">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @records.each do |record| %>
+        <tr>
+          <td><%= link_to record.name, record %></td>
+          <td><%= record.description %></td>
+          <td><%= record.category.name %></td>
+          <td><%= record.date %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
+
+
+
+<!-- <%= link_to 'Back to Home', homes_path %> -->
+>>>>>>> master

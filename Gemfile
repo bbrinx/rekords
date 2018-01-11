@@ -34,6 +34,7 @@ gem 'devise'
 # Use faker to populate the database with random data
 gem 'faker', github: 'stympy/faker'
 # gem 'therubyracer', platforms: :ruby
+gem "autoprefixer-rails"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -54,6 +55,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 group :development do
