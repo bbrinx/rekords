@@ -36,18 +36,15 @@
     </div>
   </div>
 
-  <div class="row" style="    text-align: center;">
+  <div class="row" style="text-align: center;">
     <div class="col">
       <%= form.date_select :date, id: :record_date %>
 
     </div>
   </div>
 
-  <div class="row">
-    <div class="col-2">
-      <%= form.label :category %>
+  <div class="row" style="text-align: center;">
 
-    </div>
     <div class="col">
       <%= form.collection_select :category_id, Category.all, :id, :name %>
 
@@ -55,21 +52,21 @@
   </div>
 
   <div class="row">
-    <div class="col-2">
-      <div class="actions">
-        <%= form.submit %>
-      </div>
+    <div id="btnWrap">
+      <ul>
+        <li class="Btn">
+          <%= form.submit %>
+        </li>
+      </ul>
     </div>
   </div>
 
 
 </div>
 
-<div class="row">
   <div class="col">
       <%= link_to '<i class="fa fa-arrow-left" aria-hidden="true"></i>'.html_safe, records_path %>
   </div>
-</div>
 
 
 <% end %>

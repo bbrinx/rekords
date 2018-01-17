@@ -43,4 +43,9 @@ $(document).ready(function(){
 
 
 
+  $("#profile_remember_me").click(function () {
+    console.log("hallo");
+   $("label[for='profile_remember_me']").toggleClass("rememberMe");
+});
+
 });

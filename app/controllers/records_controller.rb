@@ -34,8 +34,10 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
+
     validates :category_id
-    
+
+
     user = current_profile
     @category = Category.find(record_params[:category_id])
 

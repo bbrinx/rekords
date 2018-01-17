@@ -276,6 +276,10 @@ tbody tr td {
 }
 
 // Does not inherit
+
+.Btn input {
+
+}
 .Btn {
   &:hover {
     color: green;
@@ -556,8 +560,29 @@ i {
   color: $rekordsBlue;
   font-size: 13px !important;
 }
+
+.field {
+      text-align: center;
+}
+
+
+.rememberMe {
+  color: $rekordsLightBlue;
+  font-weight: bold;
+}
+
+label[for="profile_remember_me"]:hover {
+  color: $rekordsBlue;
+
+
+}
+
 input {
-   all: unset;
+  all:unset;
+}
+
+input[type="text"],input[type="password"] {
+  font-size: 13px;
 }
 
 input {
@@ -572,6 +597,7 @@ margin: 0 15px;
 z-index: 999;
 position: relative;
 }
+
 
 .new_profile {
   width: auto;
