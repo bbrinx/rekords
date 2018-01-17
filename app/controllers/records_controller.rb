@@ -34,15 +34,15 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    validates :category_id
     
     user = current_profile
     @category = Category.find(record_params[:category_id])
+    @date = Date.new record_params["date(1i)"].to_i, record_params["date(2i)"].to_i, record_params["date(3i)"].to_i
 
     @record = user.records.new do |r|
-      r.name = record_params["name"]
-      r.description = record_params["description"]
-      r.date = record_params["date"]
+      r.name = record_params[:name]
+      r.description = record_params[:description]
+      r.date = @date
       r.category = @category
     end
 
@@ -90,6 +90,6 @@ class RecordsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def record_params
-      params.require(:record).permit(:name, :description, :date)
+      params.require(:record).permit(:name, :description, :date, :category_id)
     end
 end
