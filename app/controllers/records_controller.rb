@@ -5,15 +5,16 @@ class RecordsController < ApplicationController
   # GET /records
   # GET /records.json
   def index
+    user = current_profile
     if params[:keywords].present?
       @keywords = params[:keywords]
       recordsearch = RecordSearchTerm.new(@keywords)
-      @records = Record.where(
+      @records = user.records.where(
         recordsearch.where_clause,
         recordsearch.where_args).
         order(recordsearch.order)
     else
-      @records = Record.all
+      @records = user.records
     end
   end
 
@@ -24,7 +25,7 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
-    @record = Record.new
+    @record = user.records.new
   end
 
   # GET /records/1/edit
