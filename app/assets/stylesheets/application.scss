@@ -21,8 +21,6 @@ $rekordsLightBlue: #67a8ea;
 
 @import "bootstrap";
 
-@import "flexslider";
-
 @import "font-awesome";
 
 @font-face {
@@ -84,29 +82,7 @@ header {
 	padding:0
 }
 
-#btnWrap {
-  margin: 0 auto;
-}
 
-#btnWrap ul {
-  list-style:none;
-  position:relative;
-  float:left;
-  margin:0;
-  padding:0
-}
-
-#btnWrap ul a {
-  display:block;
-  color:#333;
-  text-decoration:none;
-  font-weight:700;
-  font-size:15px;
-  line-height:32px;
-  padding:0 15px;
-  z-index: 999;
-  position: relative;
-}
 
 #nav_wrap ul a
 {
@@ -275,11 +251,32 @@ tbody tr td {
 
 }
 
-// Does not inherit
+// Btn
 
-.Btn input {
-
+#btnWrap {
+  margin: 0 auto;
 }
+
+#btnWrap ul {
+  list-style:none;
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0
+}
+
+#btnWrap ul a {
+  display:block;
+  color:#333;
+  text-decoration:none;
+  font-weight:700;
+  font-size:15px;
+  line-height:32px;
+  padding:0 15px;
+  z-index: 999;
+  position: relative;
+}
+
 .Btn {
   &:hover {
     color: green;
@@ -355,7 +352,7 @@ tbody tr td {
   bottom: 20%;
 }
 
-
+// notification
 
 #notice {
   margin: 10px;
@@ -416,66 +413,17 @@ tbody tr td {
 
 }
 
-
-
-
 #full {
   margin: 0px;
-  // margin-top: 10px;
-
 }
-@-webkit-keyframes ShineAnimation{
-    from {
-        background-repeat:no-repeat;
-        background-image:-webkit-linear-gradient(
-            top left,
-            rgba(255, 255, 255, 0.0) 0%,
-            rgba(255, 255, 255, 0.0) 45%,
-            rgba(255, 255, 255, 0.5) 48%,
-            rgba(255, 255, 255, 0.8) 50%,
-            rgba(255, 255, 255, 0.5) 52%,
-            rgba(255, 255, 255, 0.0) 57%,
-            rgba(255, 255, 255, 0.0) 100%
-        );
-        background-position:-100vw -100vw;
-        background-size: 100vw 100vw
-    }
-    to {
-        background-repeat:no-repeat;
-        background-position: 130vw 100vw;
-    }
-}
-
-
-// title overlayBadge
-// TODO: color fixing
-
-.full {
-  width: 100%;
-  // background-color: rgba(0,0,0,0.5);
-  // margin: 0;
-  // -webkit-animation-name: ShineAnimation;
-  //  -webkit-animation-duration: 7s;
-  //  -webkit-animation-iteration-count: infinite;
-  //  -webkit-animation-timing-function: cubic-bezier(.12,.89,.98,.47);
-
-}
-
-
 
 .col h2 {
-
        margin:auto;
 }
 
 img {
   display: block;
   margin: 0 auto;
-
-}
-
-img:hover {
-  // opacity: 1;
 }
 
 #tableBg {
@@ -501,36 +449,10 @@ img:hover {
   background-color: white;
 }
 
-
-// flexslider
-
-ol.flex-control-nav, ol.flex-control-paging, ul.flex-direction-nav {
-}
-
-.flexslider {
-  background: none;
-  border: none;
-}
-
-.flex-direction-nav a {
-  height: 50px;
-}
-
-.flex-control-nav {
-  bottom: 50px;
-  z-index: 999;
-}
-
-.flex-direction-nav a:before, .flex-deirection-nav a {
-  text-shadow: none;
-}
-
-
 .centering {
   max-width: 800px;
   margin: 0 auto;
 }
-
 
 #opacer {
   opacity: 0.8;
@@ -573,8 +495,6 @@ i {
 
 label[for="profile_remember_me"]:hover {
   color: $rekordsBlue;
-
-
 }
 
 input {
