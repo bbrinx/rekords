@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+
   root to: 'homes#index'
 
   devise_for :profiles
@@ -23,6 +24,10 @@ Rails.application.routes.draw do
   resources :new_profile_registration
 
   resources :destroy_profile_session
+
+# location
+
+  resources :locations
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
