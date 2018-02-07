@@ -11,62 +11,62 @@
 
 
 
-  <div class="centering" id="tableBg">
+<div class="centering" id="tableBg">
 
-    <div class="row">
-      <div id="btnWrap">
-        <ul>
-          <li class="Btn">
-            <%= link_to 'Neuen Rekord erstellen', new_record_path %>
-          </li>
-        </ul>
-      </div>
+  <div class="row">
+    <div id="btnWrap">
+      <ul>
+        <li class="Btn">
+          <%= link_to 'Neuen Rekord erstellen', new_record_path %>
+        </li>
+      </ul>
     </div>
+  </div>
 
-    <div class="row justify-content-md-center">
-      <section class="search-form col-lg-7">
-        <%= form_for :records, method: :get do |f| %>
-          <div class="input-group input-group-lg">
-            <%= label_tag :keywords, nil, class: "sr-only" %>
-            <%= text_field_tag :keywords, nil,
-                placeholder: "Search for a record ...",
-                class: "form-control input-lg" %>
-            <%= button_tag(:class => "input-group-addon") do %>
-              <i class="fa fa-search" aria-hidden="true"></i>
-            <% end %>
-          </div>
+  <div class="row justify-content-md-center">
+    <section class="search-form col-lg-7">
+      <%= form_for :records, method: :get do |f| %>
+      <div class="input-group input-group-lg">
+        <%= label_tag :keywords, nil, class: "sr-only" %>
+        <%= text_field_tag :keywords, nil,
+        placeholder: "Search for a record ...",
+        class: "form-control input-lg" %>
+        <%= button_tag(:class => "input-group-addon") do %>
+        <i class="fa fa-search" aria-hidden="true"></i>
         <% end %>
-      </section>
-    </div>
+      </div>
+      <% end %>
+    </section>
+  </div>
 
   <div class="row" id="">
 
     <div class="col">
-  <section class="search-results row">
-    <table class="table table-responsive-lg table-hover mt- col-1">
-      <thead class="thead-dark">
-        <tr>
-          <th>Name</th>
-          <th>Description</th>
-          <th>Category</th>
-          <th>Date</th>
-        </tr>
-      </thead>
+      <section class="search-results row">
+        <table class="table table-responsive-lg table-hover mt- col-1">
+          <thead class="thead-dark">
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Category</th>
+              <th>Date</th>
+            </tr>
+          </thead>
 
-      <tbody>
-        <% @records.each do |record| %>
-          <tr>
-            <td><%= link_to record.name, record %></td>
-            <td><%= record.description %></td>
-            <td><%= record.category.name %></td>
-            <td><%= record.date %></td>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </section>
-</div>
-</div>
+          <tbody>
+            <% @records.each do |record| %>
+            <tr>
+              <td><%= link_to record.name, record %></td>
+              <td><%= record.description %></td>
+              <td><%= record.category.name %></td>
+              <td><%= record.date %></td>
+            </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </section>
+    </div>
+  </div>
   <br>
 
 </div>

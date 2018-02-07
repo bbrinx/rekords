@@ -25,7 +25,7 @@ class RecordsController < ApplicationController
 
   # GET /records/new
   def new
-    @record = user.records.new
+    @record = current_profile.records.new
   end
 
   # GET /records/1/edit
