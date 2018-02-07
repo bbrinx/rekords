@@ -17,7 +17,8 @@
 //= require popper
 //= require bootstrap-sprockets
 //= require bootstrap
-//= require jquery.flexslider
+//= require underscore
+//= require gmaps/google
 
 
 $(document).ready(function(){
@@ -42,5 +43,10 @@ $(document).ready(function(){
   $("#email").focusout(validate);
 
 
+//
+  $("#profile_remember_me").click(function () {
+    console.log("hallo");
+   $("label[for='profile_remember_me']").toggleClass("rememberMe");
+});
 
 });

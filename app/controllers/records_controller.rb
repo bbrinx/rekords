@@ -35,7 +35,6 @@ class RecordsController < ApplicationController
   # POST /records
   # POST /records.json
   def create
-    
     user = current_profile
     @category = Category.find(record_params[:category_id])
     @date = Date.new record_params["date(1i)"].to_i, record_params["date(2i)"].to_i, record_params["date(3i)"].to_i
