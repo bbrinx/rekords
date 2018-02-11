@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'impressum/impressum'
+
   root to: 'homes#index'
 
   devise_for :profiles
