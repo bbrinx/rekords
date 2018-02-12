@@ -1,0 +1,2 @@
+class ImpressumController < ApplicationController
+end
